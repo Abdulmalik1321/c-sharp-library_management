@@ -3,6 +3,16 @@ internal class Program
 {
     private static void Main()
     {
+        var user1 = new User("Alice", new DateTime(2023, 1, 1));
+        var user2 = new User("Bob", new DateTime(2023, 2, 1));
+        var user3 = new User("Charlie", new DateTime(2023, 3, 1));
+        var user4 = new User("David", new DateTime(2023, 4, 1));
+        var user5 = new User("Eve", new DateTime(2024, 5, 1));
+        var user6 = new User("Fiona", new DateTime(2024, 6, 1));
+        var user7 = new User("George", new DateTime(2024, 7, 1));
+        var user8 = new User("Hannah", new DateTime(2024, 8, 1));
+        var user9 = new User("Ian");
+        var user10 = new User("Julia");
 
         var book1 = new Book("The Great Gatsby", new DateTime(2023, 1, 1));
         var book2 = new Book("1984", new DateTime(2023, 2, 1));
@@ -25,7 +35,7 @@ internal class Program
         var book19 = new Book("The Iliad");
         var book20 = new Book("Anna Karenina");
 
-        Console.WriteLine($"{book18.GetDate()}");
+        Console.WriteLine($"{user2.GetName()}");
 
     }
 }
