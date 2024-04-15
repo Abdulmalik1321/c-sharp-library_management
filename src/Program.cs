@@ -35,7 +35,7 @@ internal class Program
         var book19 = new Book("The Iliad");
         var book20 = new Book("Anna Karenina");
 
-        Console.WriteLine($"{user2.GetName()}");
+        Console.WriteLine($"{user2.GetId()}");
 
     }
 }
