@@ -39,63 +39,47 @@ internal class Program
 
 
 
-            Library library = new();
+            var emailService = new EmailNotificationService();
+            var smsService = new SMSNotificationService();
 
-            library.AddBook(book19);
-            library.AddBook(book20);
-            library.AddBook(book2);
-            library.AddBook(book3);
-            library.AddBook(book4);
-            library.AddBook(book5);
-            library.AddBook(book6);
-            library.AddBook(book7);
-            library.AddBook(book8);
-            library.AddBook(book1);
-            library.AddBook(book9);
-            library.AddBook(book10);
-            library.AddBook(book11);
-            library.AddBook(book12);
-            library.AddBook(book13);
-            library.AddBook(book14);
-            library.AddBook(book15);
-            library.AddBook(book16);
-            library.AddBook(book17);
-            library.AddBook(book18);
+            Library libraryWithEmail = new(emailService);
+            Library libraryWithSMS = new(smsService);
 
-            library.AddUser(user1);
-            library.AddUser(user2);
-            library.AddUser(user3);
-            library.AddUser(user4);
-            library.AddUser(user5);
-            library.AddUser(user6);
-            library.AddUser(user7);
-            library.AddUser(user8);
-            library.AddUser(user9);
-            library.AddUser(user10);
+            libraryWithEmail.AddBook(book19);
+            libraryWithEmail.AddBook(book20);
+            libraryWithEmail.AddBook(book2);
+            libraryWithEmail.AddBook(book3);
+            libraryWithEmail.AddBook(book4);
+            libraryWithEmail.AddBook(book5);
+            libraryWithEmail.AddBook(book6);
+            libraryWithEmail.AddBook(book7);
+            libraryWithEmail.AddBook(book8);
+            libraryWithEmail.AddBook(book1);
+            libraryWithSMS.AddBook(book9);
+            libraryWithSMS.AddBook(book10);
+            libraryWithSMS.AddBook(book11);
+            libraryWithSMS.AddBook(book12);
+            libraryWithSMS.AddBook(book13);
+            libraryWithSMS.AddBook(book14);
+            libraryWithSMS.AddBook(book15);
+            libraryWithSMS.AddBook(book16);
+            libraryWithSMS.AddBook(book17);
+            libraryWithSMS.AddBook(book18);
 
-
-            List<Book> allBooks = library.GetBooks(1);
-            allBooks.ForEach(book =>
-            {
-                Console.WriteLine($"{book.GetDate()} - {book.GetTitle()}");
-
-            });
-
-            library.DeleteBook(book1.GetId());
-            library.DeleteUser(library.FindUser("Fiona").GetId());
-
-            Console.WriteLine($"{library.FindBook("The Iliad").GetTitle()}");
-
-            Console.WriteLine($"{library.FindUser("Fiona").GetName()}");
+            libraryWithEmail.AddUser(user1);
+            libraryWithEmail.AddUser(user2);
+            libraryWithEmail.AddUser(user3);
+            libraryWithEmail.AddUser(user4);
+            libraryWithEmail.AddUser(user5);
+            libraryWithSMS.AddUser(user6);
+            libraryWithSMS.AddUser(user7);
+            libraryWithSMS.AddUser(user8);
+            libraryWithSMS.AddUser(user9);
+            libraryWithSMS.AddUser(user10);
         }
         catch (Exception ex)
         {
             Console.WriteLine($"{ex.Message}");
         }
-
-
-
-
-
     }
 }
