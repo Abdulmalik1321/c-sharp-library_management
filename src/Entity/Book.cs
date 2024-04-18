@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LibraryManagement
+namespace LibraryManagement;
+public class Book(string Title, DateTime? Date = null) : Base(Date)
 {
-    public class Book(string Title, DateTime? Date = null) : Base(Date)
-    {
 
-        private string _title = Title;
-        public string GetTitle()
-        {
-            return _title;
-        }
+    private string _title = Title;
+    public string GetTitle()
+    {
+        return _title;
     }
 }

@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LibraryManagement
+namespace LibraryManagement;
+public interface INotificationService
 {
-    public interface INotificationService
-    {
-        void SendNotificationOnSuccess(string message);
-        void SendNotificationOnFailure(string message);
-    }
+    void SendNotificationOnSuccess(string message);
+    void SendNotificationOnFailure(string message);
 }
