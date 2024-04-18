@@ -15,7 +15,7 @@ public class Library(INotificationService logger)
     public List<Book> GetBooks(int page)
     {
         return _books.OrderBy(d => d.GetDate())
-                     .Skip(page)
+                     .Skip(page * 5)
                      .Take(5)
                      .ToList();
     }
@@ -23,7 +23,7 @@ public class Library(INotificationService logger)
     public List<User> GetUsers(int page)
     {
         return _users.OrderBy(d => d.GetDate())
-                     .Skip(page)
+                     .Skip(page * 5)
                      .Take(5)
                      .ToList();
     }
